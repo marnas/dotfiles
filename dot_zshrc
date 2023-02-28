@@ -1,0 +1,24 @@
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="mrtazz"
+
+source $ZSH/oh-my-zsh.sh
+
+# setting variables for go
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+
+CARGOBIN=$HOME/.cargo/bin
+LOCALBIN=$HOME/.local/bin
+
+export PATH=$PATH:$GOBIN:$HOME:$CARGOBIN:$LOCALBIN
+
+# add kubectl autocomplete
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
+
+# setting up few alias
+alias vim="nvim"
+alias k="kubectl"
+alias pac="sudo pacman"
+alias docker="sudo docker"
