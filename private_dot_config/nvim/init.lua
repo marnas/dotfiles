@@ -1,0 +1,8 @@
+require "core.options"
+require "core.remap"
+require "plugins.packer"
+require "plugins.colorscheme"
+require "plugins.telescope"
+require "plugins.treesitter"
+require "plugins.neotree"
+require "plugins.bufferline"
