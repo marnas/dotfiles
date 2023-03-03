@@ -69,16 +69,20 @@ return packer.startup(function(use)
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
     requires = { 
-      "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
     }
   }
 
+  -- Bufferline for top tab style buffers
   use {
     'akinsho/bufferline.nvim', 
     requires = 'nvim-tree/nvim-web-devicons'
   }
+
+  use "christoomey/vim-tmux-navigator"
+
+  use "nvim-lualine/lualine.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
