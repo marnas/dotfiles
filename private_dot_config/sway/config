@@ -43,28 +43,15 @@ exec dbus-update-activation-environment DISPLAY XAUTHORITY WAYLAND_DISPLAY
 
 ### Idle configuration
 #
-# Example configuration:
-#
-#exec swayidle -w \
-#         timeout 5 'swaylock -f -c 000000' \
-#         timeout 7 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#         before-sleep 'swaylock -f -c 000000'
 exec swayidle -w \
-	timeout 600 'swaylock -f' \
-	timeout 605 'swaymsg "output * dpms off"' \
-	resume 'swaymsg "output * dpms on"'
+	timeout 600 'swaylock -f -c 2D2A2E' \
+	timeout 610 'swaymsg "output * dpms off"'	resume 'swaymsg "output * dpms on"' \
+	before-sleep 'swaylock -f -c 2D2A2E'
 
 #for_window [class=".*"] inhibit_idle fullscreen
 #for_window [app_id=".*"] inhibit_idle fullscreen
 
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
-
 ### Input configuration
-#
-# Example configuration:
 #
 input * {
     xkb_layout "us"
@@ -101,6 +88,9 @@ default_border pixel 3
 
     # Reload the configuration file
     bindsym $mod+Shift+r reload
+
+    # Lock sway
+    bindsym $mod+Ctrl+l exec 'swaylock -f -c 2D2A2E'
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
