@@ -1,7 +1,7 @@
 {
     "height": 24,
     "modules-left": ["sway/workspaces"],
-    "modules-right": ["tray", "pulseaudio", "clock" ],
+    "modules-right": ["tray", "custom/space", "custom/separator", "pulseaudio", "custom/separator", "clock" ],
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": false,
@@ -19,11 +19,21 @@
             "25": "5",
         }
     },
+    "custom/space": {
+      "format": "  ",
+      "interval": "once",
+      "tooltip": false
+    },
+    "custom/separator": {
+      "format": "|",
+      "interval": "once",
+      "tooltip": false
+    },
     "pulseaudio": {
       // "scroll-step": 1, // %, can be a float
       // "format": "{volume}% {icon} {format_source}",
       // "format": "{volume}% {icon}",
-      "format": " {icon} {volume}%",
+      "format": " {icon} {volume}% ",
       "format-bluetooth": "{icon} {volume}% {format_source}",
       "format-bluetooth-muted": " {icon} {format_source}",
       "format-muted": "婢",
@@ -33,7 +43,8 @@
         "headphone": "",
         "default": ["", "", ""]
       },
-      "on-click": "pavucontrol"
+      "on-click": "pavucontrol",
+      "tooltip": false
     },
     "memory": {
         "format": "RAM: {}%"
@@ -47,13 +58,14 @@
     },
     "clock": {
         //"format": "{:%H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%a %d %b %H:%M}",
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%a , %d %b %H:%M}",
         "format-alt": "{:%H:%M}",
         "interval": 1
     },
     "tray": {
         "icon-size": 18,
-        "spacing": 7
+        "spacing": 7,
+        "tooltip": false
     }
 }
