@@ -1,11 +1,26 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: Roboto;
+  font-size: 14px;
+  min-height: 0;
+}
+
 window#waybar {
-  font-size: 15px;
   background: #2d2a2e;
   color: #fcfcfa;
 }
 
-window .modules-left #workspaces button {
-  font-size: 15px;
+tooltip {
+  background: rgba(43, 48, 59, 0.5);
+  border: 1px solid rgba(100, 114, 125, 0.5);
+}
+
+tooltip label {
+  color: white;
+}
+
+#workspaces button {
   box-shadow: none;
   min-height: 20px;
   border-radius: 0;
@@ -20,20 +35,6 @@ window .modules-left #workspaces button.focused:hover,
 window .modules-left #workspaces button.focused {
   color: #fcfcfa;
   background-color: #285577;
-  /*border: 5px;*/
-  border-color: #4c7899;
-  border-width: 5px;
-}
-
-window .modules-right #custom-gpu-usage:hover,
-window .modules-right #custom-gpu-usage,
-window .modules-right #temperature,
-window .modules-right #pulseaudio,
-window .modules-right #clock:hover,
-window .modules-right #clock{
-  border: none;
-  padding: 0 0;
-  margin: 0 4;
 }
 
 window .modules-left #workspaces button:hover  {
@@ -41,7 +42,19 @@ window .modules-left #workspaces button:hover  {
   color: #dddddd;
 }
 
+window .modules-right #custom-gpu-usage,
+window .modules-right #temperature,
+window .modules-right #pulseaudio,
+window .modules-right #clock{
+  border: none;
+  padding: 0 0;
+  margin: 0 4;
+}
+
 window #custom-separator {
   color: #727072;
-  margin: 0 3px;
+}
+
+window #tray {
+  margin: 0 5px;
 }
