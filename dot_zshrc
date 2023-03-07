@@ -26,6 +26,10 @@ export RUST_WRAPPER=sccache
 # add kubectl autocomplete
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 
+if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
+    tmux attach || tmux >/dev/null 2>&1
+fi
+
 # setting up few alias
 alias vim="nvim"
 alias k="kubectl"

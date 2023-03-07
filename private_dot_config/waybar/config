@@ -1,7 +1,7 @@
 {
   "height": 24,
     "modules-left": ["sway/workspaces"],
-    "modules-right": ["tray", "custom/separator", "custom/gpu-usage", "custom/separator", "temperature", "custom/separator", "pulseaudio", "custom/separator", "clock" ],
+    "modules-right": ["tray", "custom/separator", "temperature", "custom/separator", "pulseaudio", "custom/separator", "clock" ],
     "sway/workspaces": {
       "disable-scroll": true,
       "all-outputs": false,
