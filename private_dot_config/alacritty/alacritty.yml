@@ -2,7 +2,7 @@
 colors:
   # Default colors
   primary:
-    background: '#2D2A2E'
+    background: '#303030'
     foreground: '#FCFCFA'
 
   # Normal colors

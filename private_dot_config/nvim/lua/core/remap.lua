@@ -25,6 +25,9 @@ remap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 remap("n", "<S-l>", ":bnext<CR>", opts)
 remap("n", "<S-h>", ":bprevious<CR>", opts)
 
+-- Go to first character
+remap("n", "0", "^", opts)
+
 -- Visual --
 -- Stay in indent mode
 remap("v", "<S-h>", "<gv", opts)
@@ -38,10 +41,3 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = "Go to previous dia
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
 vim.keymap.set('n', '<leader>f', vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
-
--- Terminal --
--- Better terminal navigation
---remap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
---remap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
---remap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
---remap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)

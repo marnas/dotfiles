@@ -1,4 +1,17 @@
+local telescope = require('telescope')
 local builtin = require('telescope.builtin')
+
+telescope.setup({
+    defaults = {
+        sorting_strategy = 'ascending',
+
+        layout_config = {
+            prompt_position = 'top',
+            -- height = 0.6,
+            -- width = 0.7,
+        },
+    }
+})
 
 -- Useful keymaps
 vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })

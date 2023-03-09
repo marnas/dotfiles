@@ -37,6 +37,8 @@ local on_attach = function(_, bufnr)
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, '[W]orkspace [L]ist Folders')
 
+    -- Auto format on save
+    vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
     -- Create a command `:Format` local to the LSP buffer
     vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
         vim.lsp.buf.format()
@@ -98,7 +100,7 @@ cmp.setup {
         end,
     },
     mapping = cmp.mapping.preset.insert {
-        ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-d>'] = cmp.mapping.scroll_docs( -4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete {},
         ['<CR>'] = cmp.mapping.confirm {
@@ -117,8 +119,8 @@ cmp.setup {
         ['<S-Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-                luasnip.jump(-1)
+            elseif luasnip.jumpable( -1) then
+                luasnip.jump( -1)
             else
                 fallback()
             end
