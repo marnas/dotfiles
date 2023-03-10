@@ -22,8 +22,6 @@ gaps inner 5
 # Startup programs
 exec 1password --silent
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec dbus-update-activation-environment --all
-exec gnome-keyring-daemon --start --components=secrets
 #exec xembedsniproxy
 
 ### Output configuration
@@ -221,16 +219,17 @@ bar {
     swaybar_command waybar
 }
 
+# Audio keybindings
 bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
 bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
 bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 
-#Default Apps
+# Default Apps
 bindsym $mod+b exec env MOZ_ENABLE_WAYLAND=1 firefox
 
-#Screenshot area and copy to clipboard
+# Screenshot area and copy to clipboard
 bindsym $mod+shift+s exec grim -g "$(slurp -d)" - | wl-copy -t image/png
 
-
+# Wallpaper
 output "*" bg /home/nemo/Pictures/AbhzSEI.png fill
 

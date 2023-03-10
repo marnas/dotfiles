@@ -1,8 +1,17 @@
-local colorscheme = "monokai-pro"
+require("monokai-pro").setup({
+	transparent_background = false,
+	terminal_colors = true,
+	devicons = true,        -- highlight the icons of `nvim-web-devicons`
+	italic_comments = true,
+	filter = "pro",         -- classic | octagon | pro | machine | ristretto | spectrum
+	inc_search = "background", -- underline | background
+	background_clear = {
+		-- "float_win",
+		"toggleterm",
+		"telescope",
+		"which-key",
+		"renamer"
+	}, -- "float_win", "toggleterm", "telescope", "which-key", "renamer", "neo-tree"
+})
 
--- Error handling if colorscheme is not found
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not status_ok then
-  vim.notify("colorscheme " .. colorscheme .. " not found!")
-  return
-end
+vim.cmd([[colorscheme monokai-pro]])

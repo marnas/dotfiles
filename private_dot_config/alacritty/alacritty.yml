@@ -1,28 +1,38 @@
 # Colors (Monokai Pro)
 colors:
+  # Bright colors
+  bright:
+    black:   '#727072'
+    blue:    '#FC9867'
+    cyan:    '#78DCE8'
+    green:   '#A9DC76'
+    magenta: '#AB9DF2'
+    red:     '#FF6188'
+    white:   '#FCFCFA'
+    yellow:  '#FFD866'
+  
+  # Normal colors
+  normal:
+    black:   '#403E41'
+    blue:    '#FC9867'
+    cyan:    '#78DCE8'
+    green:   '#A9DC76'
+    magenta: '#AB9DF2'
+    red:     '#FF6188'
+    white:   '#FCFCFA'
+    yellow:  '#FFD866'
+
   # Default colors
   primary:
     background: '#303030'
     foreground: '#FCFCFA'
 
-  # Normal colors
+font:
   normal:
-    black:   '#403E41'
-    red:     '#FF6188'
-    green:   '#A9DC76'
-    yellow:  '#FFD866'
-    blue:    '#FC9867'
-    magenta: '#AB9DF2'
-    cyan:    '#78DCE8'
-    white:   '#FCFCFA'
+    # family: Input Mono
+    family: JetBrains Mono
 
-  # Bright colors
-  bright:
-    black:   '#727072'
-    red:     '#FF6188'
-    green:   '#A9DC76'
-    yellow:  '#FFD866'
-    blue:    '#FC9867'
-    magenta: '#AB9DF2'
-    cyan:    '#78DCE8'
-    white:   '#FCFCFA'
+# window:
+#   padding:
+#     x: 4
+#     y: 0
