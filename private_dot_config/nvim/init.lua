@@ -1,6 +1,6 @@
 require "core.options"
 require "core.remap"
-require "plugins.packer"
+require "core.lazy"
 require "plugins.colorscheme"
 require "plugins.telescope"
 require "plugins.treesitter"

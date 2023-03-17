@@ -28,6 +28,9 @@ remap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Go to first character
 remap("n", "0", "^", opts)
 
+-- Clear search highlights
+remap("n", "\\\\", ":nohlsearch<CR>", opts)
+
 -- Visual --
 -- Stay in indent mode
 remap("v", "<S-h>", "<gv", opts)
