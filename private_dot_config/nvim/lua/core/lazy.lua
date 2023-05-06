@@ -54,7 +54,15 @@ local plugins = {
 		dependencies = 'nvim-tree/nvim-web-devicons'
 	},
 
-	"christoomey/vim-tmux-navigator",
+	-- "christoomey/vim-tmux-navigator",
+	{
+		"numToStr/Navigator.nvim",
+		config = function()
+			require('Navigator').setup({
+				disable_on_zoom = true
+			})
+		end
+	},
 
 	"nvim-lualine/lualine.nvim",
 

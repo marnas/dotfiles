@@ -10,10 +10,10 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 -- Better window navigation
-remap("n", "<C-h>", "<C-w>h", opts)
-remap("n", "<C-j>", "<C-w>j", opts)
-remap("n", "<C-k>", "<C-w>k", opts)
-remap("n", "<C-l>", "<C-w>l", opts)
+remap("n", "<C-h>", "<CMD>NavigatorLeft<CR>", opts)
+remap("n", "<C-l>", "<CMD>NavigatorRight<CR>", opts)
+remap("n", "<C-k>", "<CMD>NavigatorUp<CR>", opts)
+remap("n", "<C-j>", "<CMD>NavigatorDown<CR>", opts)
 
 -- Resize with arrows
 remap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -40,7 +40,7 @@ remap("v", "<S-l>", ">gv", opts)
 remap("v", "p", '"_dP', opts)
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
-vim.keymap.set('n', '<leader>f', vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
+vim.keymap.set("n", "<leader>f", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
+vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
