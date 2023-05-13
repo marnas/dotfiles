@@ -72,12 +72,33 @@ mason_lspconfig.setup_handlers {
 	end,
 }
 
+--  luasnip setup
+local luasnip = require 'luasnip'
+luasnip.config.setup {
+	history = true,
+	updateevents = "TextChanged, TextChangedI",
+}
+
+vim.keymap.set({ "i", "s" }, "C-k", function()
+	if luasnip.expand_or_jumpable() then
+		luasnip.expand_or_jump()
+	end
+end, { silent = true })
+
+vim.keymap.set({ "i", "s" }, "C-j", function()
+	if luasnip.jumpable(-1) then
+		luasnip.jump(-1)
+	end
+end, { silent = true })
+
+vim.keymap.set({ "i", "s" }, "C-l", function()
+	if luasnip.choice_is_active() then
+		luasnip.change_choice()
+	end
+end, { silent = true })
+
 -- nvim-cmp setup
 local cmp = require 'cmp'
-local luasnip = require 'luasnip'
-
-luasnip.config.setup {}
-
 cmp.setup {
 	snippet = {
 		expand = function(args)
