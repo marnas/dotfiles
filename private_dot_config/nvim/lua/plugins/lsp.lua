@@ -12,6 +12,10 @@ local on_attach = function(_, bufnr)
 		vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
 	end
 
+	if vim.bo[bufnr].buftype ~= "" or vim.bo[bufnr].filetype == "helm" then
+		vim.diagnostic.disable()
+	end
+
 	nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
 	nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
@@ -43,6 +47,13 @@ local servers = {
 			telemetry = { enable = false },
 		},
 	},
+
+	yamlls = {
+		yaml = {
+			schemas = { kubernetes = "*.yaml" },
+		},
+	},
+
 }
 
 -- Setup neovim lua configuration

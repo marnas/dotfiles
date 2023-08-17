@@ -23,6 +23,10 @@ gaps inner 5
 exec 1password --silent
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec xembedsniproxy
+exec_always rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov
+exec_always fusuma
+
+bindsym $mod+equal  exec "echo 1 > /tmp/sovpipe"
 
 ### Output configuration
 #
@@ -40,8 +44,8 @@ output DP-2 mode --custom 2560x1440@75HZ position 2560,0
 ### Idle configuration
 #
 exec swayidle -w \
-	timeout 600 'swaylock -f -c 2D2A2E' \
-	timeout 610 'swaymsg "output * dpms off"'	resume 'swaymsg "output * dpms on"' \
+	timeout 1800 'swaylock -f -c 2D2A2E' \
+	timeout 1810 'swaymsg "output * dpms off"'	resume 'swaymsg "output * dpms on"' \
 	before-sleep 'swaylock -f -c 2D2A2E'
 
 #for_window [class=".*"] inhibit_idle fullscreen
@@ -53,7 +57,14 @@ input * {
     xkb_layout "us"
     xkb_variant "altgr-intl"
 }
-#
+
+input 76:613:Apple_Inc._Magic_Trackpad_2 {
+	accel_profile adaptive
+	natural_scroll enabled
+	scroll_factor 0.2
+	tap enabled
+	tap_button_map lrm
+}
 
 # Disable mouse focus
 focus_follows_mouse no
@@ -131,6 +142,8 @@ bindsym $mod+Shift+5 exec "swaysome move 5"
 
 # Move focus to next output
 bindsym $mod+e focus output right
+bindsym $mod+alt+left workspace next_on_output
+bindsym $mod+alt+right workspace prev_on_output
 
 # Move focused container to next output
 bindsym $mod+Shift+e exec "swaysome next-output"
@@ -221,7 +234,7 @@ bar {
     swaybar_command waybar
 }
 
-# Audio keybindings
+# Audio keybindingsLEFTMETA
 bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
 bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
 bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle

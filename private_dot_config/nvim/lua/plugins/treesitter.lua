@@ -1,5 +1,7 @@
+require 'nvim-treesitter.install'.compilers = { "gcc" }
 local configs = require("nvim-treesitter.configs")
 configs.setup {
+	modules = {},
 	ensure_installed = "all",
 	sync_install = false,
 	auto_install = true,

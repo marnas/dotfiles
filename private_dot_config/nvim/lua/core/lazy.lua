@@ -57,11 +57,7 @@ local plugins = {
 	-- "christoomey/vim-tmux-navigator",
 	{
 		"numToStr/Navigator.nvim",
-		config = function()
-			require('Navigator').setup({
-				disable_on_zoom = true
-			})
-		end
+		config = function() require('Navigator').setup({ disable_on_zoom = true }) end
 	},
 
 	"nvim-lualine/lualine.nvim",
@@ -82,6 +78,7 @@ local plugins = {
 			'folke/neodev.nvim',
 		},
 	},
+	'towolf/vim-helm',
 
 	{
 		-- Autocompletion
