@@ -22,8 +22,12 @@ remap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 remap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-remap("n", "<S-l>", ":bnext<CR>", opts)
-remap("n", "<S-h>", ":bprevious<CR>", opts)
+remap("n", "<C-Tab>", ":bnext<CR>", opts)
+remap("n", "<C-S-Tab>", ":bprevious<CR>", opts)
+
+-- Better Scrolling
+remap("n", "<C-N>", "<C-E>", opts)
+remap("n", "<C-E>", "<C-Y>", opts)
 
 -- Go to first character
 remap("n", "0", "^", opts)

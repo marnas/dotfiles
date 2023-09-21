@@ -17,6 +17,8 @@ set $term alacritty
 # application launcher
 set $menu tofi-run --config /home/nemo/.config/tofi/fullscreen | xargs swaymsg exec --
 
+seat * hide_cursor when-typing disable
+
 gaps inner 5
 
 # Startup programs
@@ -24,6 +26,7 @@ exec 1password --silent
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec xembedsniproxy
 exec_always rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov
+exec_always keyd-application-mapper -d
 exec_always fusuma
 
 bindsym $mod+equal  exec "echo 1 > /tmp/sovpipe"
@@ -241,6 +244,7 @@ bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 
 # Default Apps
 bindsym $mod+b exec env MOZ_ENABLE_WAYLAND=1 firefox
+bindsym $mod+o exec 1password
 
 # Screenshot area and copy to clipboard
 bindsym $mod+shift+s exec grim -g "$(slurp -d)" - | wl-copy -t image/png

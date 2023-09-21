@@ -32,7 +32,10 @@ font:
     # family: Input Mono
     family: JetBrains Mono
 
-# window:
+key_bindings:
+  - { key: Tab,        mods: Control,       chars: "\x1b[9;5u"                }
+  - { key: Tab,        mods: Control|Shift, chars: "\x1b[9;6u"                }
+
 #   padding:
 #     x: 4
 #     y: 0
