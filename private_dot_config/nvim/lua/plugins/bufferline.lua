@@ -1,5 +1,5 @@
 vim.opt.termguicolors = true
-vim.api.nvim_set_keymap("n", "<leader>bd", ":bp <cr>:bd# <cr>", {})
+vim.api.nvim_set_keymap("n", "<C-w>", ":bp <cr>:bd# <cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>bl", ":BufferLineMoveNext <cr>", {})
 vim.api.nvim_set_keymap("n", "<leader>bh", ":BufferLineMovePrev <cr>", {})
 

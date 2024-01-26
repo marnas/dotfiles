@@ -30,6 +30,7 @@ local plugins = {
 	-- Treesitter for better color highlighting
 	{
 		"nvim-treesitter/nvim-treesitter",
+		tag = 'v0.9.2',
 		build = function()
 			pcall(require('nvim-treesitter.install').update { with_sync = true })
 		end,

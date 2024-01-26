@@ -9,8 +9,8 @@ configs.setup {
 	incremental_selection = {
 		enable = true,
 		keymaps = {
-			init_selection = '<c-w>',
-			node_incremental = '<c-w>',
+			init_selection = '<c-a>',
+			node_incremental = '<c-a>',
 			node_decremental = '<c-s>',
 		},
 	},

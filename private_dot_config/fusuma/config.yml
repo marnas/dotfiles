@@ -1,0 +1,14 @@
+swipe:
+  3:
+    left:
+      sendkey: 'LEFTMETA+LEFTALT+LEFT'
+      threshold: 5
+    right:
+      sendkey: 'LEFTMETA+LEFTALT+RIGHT'
+      threshold: 5
+    up:
+      sendkey: 'LEFTMETA+LEFTALT+EQUAL'
+      threshold: 5
+    down:
+      sendkey: 'LEFTMETA+LEFTALT+EQUAL'
+      threshold: 5

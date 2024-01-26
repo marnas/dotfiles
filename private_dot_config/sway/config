@@ -26,7 +26,7 @@ exec 1password --silent
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec xembedsniproxy
 exec_always rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov
-exec_always keyd-application-mapper -d
+exec_always fusuma
 exec_always fusuma
 
 bindsym $mod+equal  exec "echo 1 > /tmp/sovpipe"
@@ -40,6 +40,9 @@ bindsym $mod+equal  exec "echo 1 > /tmp/sovpipe"
 #
 output DP-1 mode --custom 2560x1440@75HZ position 0,0
 output DP-2 mode --custom 2560x1440@75HZ position 2560,0
+#output DP-3 res 640x480
+output DP-3 power off
+output DP-3 disable
 #output HDMI-A-1 mode --custom 1280x720@59.86HZ position 5120,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
@@ -247,7 +250,7 @@ bindsym $mod+b exec env MOZ_ENABLE_WAYLAND=1 firefox
 bindsym $mod+o exec 1password
 
 # Screenshot area and copy to clipboard
-bindsym $mod+shift+s exec grim -g "$(slurp -d)" - | wl-copy -t image/png
+bindsym $mod+ctrl+p exec grim -g "$(slurp -d)" - | wl-copy -t image/png
 
 # Wallpaper
 output "*" bg /home/nemo/Pictures/AbhzSEI.png fill
