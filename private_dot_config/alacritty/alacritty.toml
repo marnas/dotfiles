@@ -1,0 +1,42 @@
+[colors.bright]
+black = "#727072"
+blue = "#FC9867"
+cyan = "#78DCE8"
+green = "#A9DC76"
+magenta = "#AB9DF2"
+red = "#FF6188"
+white = "#FCFCFA"
+yellow = "#FFD866"
+
+[colors.normal]
+black = "#403E41"
+blue = "#FC9867"
+cyan = "#78DCE8"
+green = "#A9DC76"
+magenta = "#AB9DF2"
+red = "#FF6188"
+white = "#FCFCFA"
+yellow = "#FFD866"
+
+[colors.primary]
+background = "#303030"
+foreground = "#FCFCFA"
+
+[font]
+size = 13.5
+
+[font.normal]
+family = "JetBrains Mono"
+
+[[keyboard.bindings]]
+chars = "\u001B[9;5u"
+key = "Tab"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[9;6u"
+key = "Tab"
+mods = "Control|Shift"
+
+[window]
+option_as_alt = "Both"
